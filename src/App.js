@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./app.css"
 function App() {
  
-  const [count, setcount] = useState(0);
-
-
+  const list = ["milk","curd","vegetables","cheese","fruits"]
 
   return (
-    <div className='count'>
-       Count : {count}
-       <button style={{color:"red", width:"120px",height:"30px"}} onClick={()=>setcount(coun=>coun+1)}>+</button>
-       <button  style={{backgroundColor:"teal", width:"400px", fontWeight:"bold", fontSize:"100px"}} onClick={()=>setcount(0)}>Reset</button>
-       <button style={{color:"black", width:"120px",height:"30px",fontWeight:"bold"}} onClick={()=>setcount(coun=>coun-1)}>-</button>
-    </div>
+<div>
+<h1>{"List of materials to be shoped"}</h1>
+<ul style={{fontWeight:"bold"}}>
+      {
+        list.map(item => <li style={{border:"2px solid red", padding:"12px",borderBlockEndColor:"bisque"}}>{item}</li>)
+      }
+    </ul>
+</div>
+
   );
 }
 
