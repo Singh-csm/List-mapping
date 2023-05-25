@@ -1,22 +1,31 @@
 import React from 'react';
-
-import "./app.css"
-function App() {
- 
-  const list = ["milk","curd","vegetables","cheese","fruits"]
-
+import "./app.css";
+function Item({ name, isPacked }) {
   return (
-<div className='main'>
-<p className='main' style={{backgroundColor:"goldenrod"}}>Lists</p>
-<h1>{"List of materials to be shopped"}</h1>
-<ul style={{fontWeight:"bold", backgroundColor:"teal"}}>
-      {
-        list.map(item => <li style={{border:"2px solid red", padding:"12px",borderBlockEndColor:"bisque"}}>{item}</li>)
-      }
-    </ul>
-</div>
-
+    <li className="main" style={{backgroundColor:"mediumseagreen"}}>
+      {name} {isPacked && '✔'}
+    </li>
   );
 }
 
-export default App;
+export default function PackingList() {
+  return (
+    <section className='main' style={{backgroundColor:"ThreeDLightShadow"}}>
+      <h1 className='main'>Sally Ride's Packing List</h1>
+      <ul className='main' style={{backgroundColor:"darkslateblue"}}>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Photo of T" 
+        />
+      </ul>
+    </section>
+  );
+}
